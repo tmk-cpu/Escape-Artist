@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dfxriycfkmfla"]
+
+[ext_resource type="Script" uid="uid://evnbnyb1go8c" path="res://scripts/character_body_2d.gd" id="1_3vyb7"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u8vuu"]
+
+[node name="Node2D" type="Node2D" unique_id=93994091]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=52051621]
+script = ExtResource("1_3vyb7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=471673141]
+position = Vector2(58, 95)
+shape = SubResource("CapsuleShape2D_u8vuu")
+
+[node name="ColorRect" type="ColorRect" parent="CharacterBody2D" unique_id=1274511831]
+offset_left = 53.0
+offset_top = 81.0
+offset_right = 62.0
+offset_bottom = 109.0
+color = Color(0.4099646, 0.6573477, 0.16012818, 1)
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=625011091]
+position_smoothing_enabled = true

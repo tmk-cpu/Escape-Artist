@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://kn18ebu3kuu3"]
+
+[ext_resource type="Script" uid="uid://m4vp2wb4863q" path="res://scripts/enemy.gd" id="1_7p1mj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nckey"]
+size = Vector2(50, 63)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lj8jo"]
+radius = 23.0
+height = 58.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7p1mj"]
+size = Vector2(50, 63)
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1375859794]
+script = ExtResource("1_7p1mj")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=679149992]
+offset_left = 53.0
+offset_top = 40.0
+offset_right = 103.0
+offset_bottom = 103.0
+color = Color(0.8545947, 0.13172594, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1180912892]
+position = Vector2(78, 71.5)
+shape = SubResource("RectangleShape2D_nckey")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=558610542]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1529111062]
+position = Vector2(78, 71)
+shape = SubResource("CapsuleShape2D_lj8jo")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=848042023]
+position = Vector2(78, 71.5)
+
+[node name="RayCast2D" type="RayCast2D" parent="Node2D" unique_id=1198370696]
+position = Vector2(19, 21.5)
+target_position = Vector2(16, 12)
+collision_mask = 8
+hit_from_inside = true
+
+[node name="Area2D2" type="Area2D" parent="." unique_id=973667604]
+
+[node name="Hitbox" type="CollisionShape2D" parent="Area2D2" unique_id=805977135]
+position = Vector2(78, 71.5)
+shape = SubResource("RectangleShape2D_7p1mj")
